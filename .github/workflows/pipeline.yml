@@ -1,93 +1,42 @@
-Codeshare is upgrading over the coming days! Plan accordingly for critical sessions. Learn more
-Dismiss
-Codeshare logo
- ShareSign UpLog In
-1
 # DevOps Workshop CI/CD Pipeline
-2
 # File: .github/workflows/pipeline.yml
-3
-​
-4
+
 name: DevOps Pipeline
-5
-​
-6
+
 # TRIGGER: Run whenever code is pushed to the main branch
-7
 on:
-8
   push:
-9
-    branches: [main]
-10
-​
-11
+    branches: [ main ]
+
 # JOBS: What the pipeline actually does
-12
 jobs:
-13
   build:
-14
-​
-15
+
     # Use a fresh Ubuntu virtual machine for each run
-16
     runs-on: ubuntu-latest
-17
-​
-18
+
     steps:
-19
-​
-20
+
       # Step 1: Download the repository code onto the runner
-21
       - name: Checkout repository
-22
         uses: actions/checkout@v3
-23
-​
-24
+
       # Step 2: Show which files are in the repository
-25
       - name: List project files
-26
         run: ls -la
-27
-​
-28
+
       # Step 3: Simulate installing dependencies
-29
       - name: Install dependencies
-30
         run: echo "Installing dependencies... done."
-31
-​
-32
+
       # Step 4: Simulate running tests
-33
       - name: Run tests
-34
         run: echo "Running tests... all tests passed."
-35
-​
-36
+
       # Step 5: Simulate building the application
-37
       - name: Build application
-38
         run: echo "Building application... build successful."
-39
-​
-40
+
       # Step 6: Print a completion message
-41
       - name: Pipeline complete
-42
         run: echo "Pipeline finished. Ready for deployment."
-
-
-
-Please don't block our ads :( － Ad sponsors allow us to make Codeshare free.
-Hide Ads
